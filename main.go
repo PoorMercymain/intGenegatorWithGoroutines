@@ -36,7 +36,7 @@ func random(channel *chan bool, channelNumber int) {
 
 	//обращаемся к файлу
 	//если файла с соответствующим названием нет - он создается, если есть - перезаписывается
-	file, openFileFailed := os.Create("data" + strconv.Itoa(channelNumber) + ".txt")
+	file, openFileFailed := os.Create(strconv.Itoa(channelNumber) + ".txt")
 
 	//если произошла ошибка при обращении к файлу - логируем это и выполнение программы останавливается
 	if openFileFailed != nil {
